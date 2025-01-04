@@ -82,9 +82,7 @@ dependencies {
     //glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
 
-    //activity and fragment Ktx for viewModels(
-    implementation ("androidx.activity:activity-ktx:1.9.3")
-    implementation ("androidx.fragment:fragment-ktx:1.8.5")
+
 
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
