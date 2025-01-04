@@ -35,12 +35,11 @@ O **CryptoApp** é um aplicativo simples e funcional para rastrear informações
 
 ## 📷 Screenshots
 
-| <img src="./screen_home.png" alt="Tela Home" width="300"/> | <img src="./screen_details.png" alt="Tela Detalhes" width="300"/> | <img src="./screen_favorite.png" alt="Tela de Favoritos" width="300"/> |
+| <img src="./home_screen.png" alt="Tela Home" width="300"/> | <img src="./screen_details.png" alt="Tela Detalhes" width="300"/> | <img src="./screen_favorite.png" alt="Tela de Favoritos" width="300"/> |
 |:-------------------------------------------------------------:|:-------------------------------------------------------------------:|:------------------------------------------------------------:|
 | **Tela Home**                                             | **Tela de Detalhes**                                               | **Tela de Favoritos**                                            |
-| <img src="./screen_details.png" alt="Tela de Detalhes" width="300"/> | <img src="./screen_new_book.png" alt="Tela de Novo Livro" width="300"/> | <img src="./screen_profile.png" alt="Tela de Perfil" width="300"/> |
+| <img src="./screen_search.png" alt="Tela de Detalhes" width="300"/> |                                                                     |                                                                     |
 | **Tela de Busca**                                          |                                                                     |                                                                     |
-| <img src="./screen_search.png" alt="Tela de Busca" width="300"/>                                                            |
 
 ## 📂 Estrutura do Projeto
 
