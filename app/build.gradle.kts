@@ -1,7 +1,17 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("kotlin-kapt")
+}
+
+
+val apikeyPropertiesFile = rootProject.file("apikey.properties")
+val apikeyProperties = Properties()
+if (apikeyPropertiesFile.exists()) {
+    apikeyProperties.load(FileInputStream(apikeyPropertiesFile))
 }
 
 android {
@@ -19,7 +29,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "API_KEY", "\"${apikeyProperties["API_KEY"]}\"")
+        }
         release {
+            buildConfigField("String", "API_KEY", "\"${apikeyProperties["API_KEY"]}\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -28,6 +42,7 @@ android {
         }
     }
     buildFeatures{
+        buildConfig = true
         viewBinding = true
     }
     compileOptions {
@@ -74,9 +89,6 @@ dependencies {
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
-
-    //permissionX
-    implementation ("com.guolindev.permissionx:permissionx:1.8.1")
 
 
     //tests
