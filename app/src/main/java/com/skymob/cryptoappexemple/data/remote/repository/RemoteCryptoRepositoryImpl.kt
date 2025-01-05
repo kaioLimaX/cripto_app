@@ -24,7 +24,7 @@ class RemoteCryptoRepositoryImpl(
             emit(Result.failure(Exception("No internet connection")))
             return@flow//pausa execução do flow
         }
-        val response = apiService.getCryptocurrencies(start, limit, convert)
+        val response = apiService.getCryptocurrencies()
         if (response.isSuccessful) {
             val cryptoResponse = response.body()
             if (cryptoResponse != null) {

@@ -9,7 +9,7 @@ class GetCryptoInfoUseCase(
     private val repository: RemoteCryptoRepository
 ) {
     suspend fun execute(id: Int): Flow<Result<Crypto>> {
-        return repository.getCryptoCurrencies(1, 50, "USD").map { result ->
+        return repository.getCryptoCurrencies().map { result ->
             result.map { cryptoList ->
                 // Filtra o item da lista pelo ID
                 cryptoList.find { it.id == id } // Retorna o item correspondente

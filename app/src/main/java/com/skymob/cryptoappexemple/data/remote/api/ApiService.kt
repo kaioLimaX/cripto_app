@@ -9,7 +9,7 @@ interface ApiService {
     @GET("cryptocurrency/listings/latest")
     suspend fun getCryptocurrencies(
         @Query("start") start: Int = 1,
-        @Query("limit") limit: Int = 15,
+        @Query("limit") limit: Int = 50,
         @Query("convert") convert: String = "USD"
     ): Response<CryptoResponse>
 

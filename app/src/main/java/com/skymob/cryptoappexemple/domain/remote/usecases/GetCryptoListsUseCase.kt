@@ -9,7 +9,7 @@ class GetCryptoListsUseCase(
     private val repository: RemoteCryptoRepository
 ) {
     suspend fun execute(start: Int, limit: Int, convert: String): Flow<Result<CryptoLists>> {
-        return repository.getCryptoCurrencies(start, limit, convert).map { result ->
+        return repository.getCryptoCurrencies().map { result ->
             result.map { listCripto ->
                 // Processando as listas
                 val topCurrencies = listCripto.sortedByDescending { it.marketCap }.take(10)

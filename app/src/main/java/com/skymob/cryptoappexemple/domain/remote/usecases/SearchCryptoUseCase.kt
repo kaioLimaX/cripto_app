@@ -10,7 +10,7 @@ class SearchCryptoUseCase(
     private val repository: RemoteCryptoRepository
 ) {
     suspend fun execute(searchTerm: String): Flow<Result<List<Crypto>>> {
-        return repository.getCryptoCurrencies(1, 50, "USD").map { result ->
+        return repository.getCryptoCurrencies().map { result ->
             result.map { cryptoList ->
                 // Filtra a lista por nome ou símbolo que contenham o termo
                 cryptoList.filter { crypto ->
