@@ -58,7 +58,7 @@ data class CryptoResponse(
         val credit_count: Int = 0,
         val elapsed: Int = 0,
         val error_code: Int = 0,
-        val error_message: Any = Any(),
+        val error_message: String? = null,
         val notice: Any = Any(),
         val timestamp: String = "",
         val total_count: Int = 0
