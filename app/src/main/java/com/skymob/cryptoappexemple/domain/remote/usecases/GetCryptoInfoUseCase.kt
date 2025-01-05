@@ -10,7 +10,7 @@ class GetCryptoInfoUseCase(
 ) {
     suspend fun execute(id: Int): Flow<Result<Crypto>> {
         return repository.getCryptoCurrencies().map { result ->
-            result.map { cryptoList ->
+            result.mapCatching { cryptoList ->
                 // Filtra o item da lista pelo ID
                 cryptoList.find { it.id == id } // Retorna o item correspondente
                     ?: throw NoSuchElementException("Criptomoeda com ID $id não encontrada.")
